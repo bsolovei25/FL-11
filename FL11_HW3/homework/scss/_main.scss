@@ -1,0 +1,249 @@
+$map: ("first": 35px,"join_hikes":350%,"span":40%,"mainp":220%);
+$mapfonts: ("sans": 'Source Sans Pro',"hind":Hind,"fresca":Fresca);
+
+.button_prop
+{
+	pointer-events:none;
+	color:white;
+	border:0px;
+	background: $fromcolor;
+	height:40px;
+	text-align:center;
+	border-radius:3px;
+	padding-left:50px;
+	padding-right:50px;
+}
+
+@mixin span_properties
+{
+	text-align:center;
+	font-size:map-get($map, span);
+	display:block;
+}
+@mixin section_card_properties
+{
+	width: 118px;
+	height: 8px;
+	bottom:1px;
+	margin-left: 33.5%
+}
+
+
+@mixin logo_size
+{
+	height: 50px;
+	width:40px;
+	margin:5px;
+
+}
+@mixin join_hikes
+{
+	font-weight: bold;
+	font-size:map-get($map, join_hikes);
+}
+@mixin hikingclub
+{
+	display: flex;
+    flex-direction: row;
+}
+
+.blue_line
+{
+	content: '';
+    background-color: $headingColor;
+    display: block; 
+    position: absolute;
+    z-index: -1;   
+}
+
+body
+{
+font-family: $fonts;
+background-color:$mainBackground;
+}
+.header {
+	background: $headerBackground no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: $headerFontsColor;
+	border-bottom-right-radius: 500px 300px;
+	}
+.header-wrap{
+		color:$headercolor;
+		width:500px;
+		margin-left:112px;
+		button{
+			@extend .button_prop;
+			margin-bottom:250px;
+			font-family:map-get($mapfonts,sans);
+		}
+		}
+		
+  .landing-logo
+  {
+ font-family:map-get($mapfonts,fresca);
+  span
+  {
+	@include span_properties;
+  }
+    @include hikingclub;
+	img
+	{
+		@include logo_size;
+	}
+  }
+  
+  .header_text{
+	font-family: map-get($mapfonts,fresca);
+	margin-left:-30px;
+	white-space: pre;
+  }
+  .header_heading {
+    font-family:map-get($mapfonts,sans);
+	position: relative;
+	z-index: 1;
+	@include join_hikes;
+}
+.header_heading::after {
+	@extend .blue_line;
+	bottom: 10px;
+	height: 18px;    
+	width: 47%;
+}
+
+.section_text
+{
+	color:$headercolor;
+	position: relative;
+	z-index: 1;
+	text-align:center;
+	font-size:map-get($map, mainp);
+	
+}
+.section_text::after{
+	@extend .blue_line;
+	bottom: -10px;
+	height: 9px;
+	width: 10%;
+	top:28px;
+	margin-left:738px;
+}
+.section_card_wrap{
+  @include hikingclub;
+  justify-content: center;
+  margin: 10px;
+  }
+
+@for $i from 1 through 3 {
+.section_card:nth-child(#{$i}){
+		border-radius: 10px;
+		padding: 10px;
+		color:white;
+		background-color:$footerbackground;
+		width: 350px;
+		height:398px;
+		text-align:center;
+		margin: 10px;
+		p.section_card_heading{
+		position: relative;
+		z-index: 1;
+		}
+.section_card_underline:after{
+				@extend .blue_line;
+				@include section_card_properties;
+				@if($i == 1)
+				{
+					bottom: -10px;
+					height: 9px;
+					width: 33%;
+					top:12px;
+					
+				
+				}
+				@else if($i == 2)
+				{
+					bottom: -10px;
+					height: 9px;
+					width: 28%;
+					margin-left:126px;
+					top:12px;
+				}
+				@else if($i == 3)
+				{
+					bottom: -10px;
+					height: 9px;
+					width: 21%;
+					margin-left:138px;
+					top:12px;
+				}
+			}
+			}
+			}
+.section_card_img{
+			width:342px;
+			height:210px;
+			margin-top:10px;
+			border-radius: 10px
+		}
+		
+
+.section_banner
+{
+    background: linear-gradient(to right, $fromcolor, $tocolor);
+	width:900px;
+	z-index:1;
+	margin-left: 350px;
+	bottom: -80px;
+	position:relative;
+	@include hikingclub;
+	justify-content: space-around;
+	border-radius:10px;
+}
+.section_banner_button{
+		@extend .button_prop;
+		margin-top:60px;
+		font-family:map-get($mapfonts,sans);
+	}
+.section_banner_heading
+	{
+		z-index:1;
+		position:relative;
+		font-size:map-get($map, first);
+		font-weight:bold;
+		color:$ready;
+		font-family:map-get($mapfonts,sans);
+	}
+.section_banner_heading::after
+	{
+		@extend .blue_line;
+		width: 70px;
+		height: 13px;
+		bottom:7px;
+		margin-left: 30.5%
+	}
+	.section_banner_text
+	{
+	    font-family:map-get($mapfonts,fresca);
+		color:$grey;
+	}
+.footer-wrap
+{
+	font-family:map-get($mapfonts,fresca);	
+	@include hikingclub;
+	justify-content: space-around;
+	padding: 100px;
+	margin-top: 10px;
+	padding: 60px;
+	z-index:-1;
+	color:$grey;
+	background-color:$footerbackground;
+}
+.footer_text
+  {
+	margin-top:100px;
+	width:340px;
+  }
+.footer-cr,.footer_text,.footer_logo
+  {
+	margin-top:100px;
+  }

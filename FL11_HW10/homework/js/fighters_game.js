@@ -51,7 +51,7 @@ class Fighter {
     attack(f2) {
         let hun = 100;
         let d = Math.random();
-        if (d < 1 - f2.getAgility / hun) {
+        if (d < f2.getAgility / hun) {
             f2.dealDamage(this.getDamage);
             console.log(`${this.getName} make ${this.getDamage} damage to ${f2.getName}`);
         }else {

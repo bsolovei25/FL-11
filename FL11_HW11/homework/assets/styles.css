@@ -1,0 +1,57 @@
+ h1{
+	color:#458cff;
+	text-align:center;
+}
+
+.DOText, .edit, .delete-row{
+	color:#458cff;
+}
+
+.form .material-icons{
+	padding-left:100px;
+}
+
+.form input{
+	height:40px;
+	width:80%;
+}
+
+.main .form{
+	padding-left:100px;
+}
+
+.table 
+{
+	padding-left:95px;
+}
+
+.form i{
+cursor: pointer;
+}
+
+.textdiv{
+	align-items:center;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+
+.textdiv p{
+	margin-left: 30px;
+	width:92%;
+}
+
+.textdiv .check_box_outline_blank{
+	margin-left:100px;
+}
+
+
+.textdiv .edit{
+	width:1890%;
+}
+
+.textdiv .delete-row{
+	width:280%;
+}
+
